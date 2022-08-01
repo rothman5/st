@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "monospace:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Source Code Pro:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -96,27 +96,30 @@ unsigned int tabspaces = 4;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#2b2b2b",  // black bg
-	"#bf616a",  // red
-	"#a3be8c",  // green
-	"#ebcb8b",  // yellow
-	"#5e81ac",    // blue 
-	"#b48ead", // magenta
-	"#8fbcbb",    // cyan
-	"#d8dee9",   // white
+	"#2b2b2b", // Black   (bg)
+	"#bf616a", // Red
+	"#a3be8c", // Green
+	"#ebcb8b", // Yellow
+	"#5e81ac", // Blue
+	"#b48ead", // Magenta
+	"#8fbcbb", // Cyan
+	"#d8dee9", // Gray
 
 	/* 8 bright colors */
-	"#2e3440",
-	"#bf616a",
-	"#a3be8c",
-	"#ebcb8b",
-	"#81a1c1",
-	"#b48ead",
-	"#88c0d0",
-	"#eceff4",
+	"#2e3440", // Alt.    black
+	"#bf616a", // Red
+	"#a3be8c", // Green
+	"#ebcb8b", // Yellow
+	"#81a1c1", // Blue
+	"#b48ead", // Magenta
+	"#88c0d0", // Cyan
+	"#eceff4", // White
 
 	[255] = 0,
 
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#5b5b5b",
+	"#4c4c4c",
 	"#d8dee9", /* default foreground colour */
 	"#2b2b2b", /* default background colour */
 };
@@ -193,9 +196,9 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Up,          zoom,           {.f = +1} },
 	{ ControlMask,          XK_Down,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ ControlMask,          XK_c,           clipcopy,       {.i =  0} },
-	{ ControlMask,          XK_v,           clippaste,      {.i =  0} },
-	{ ControlMask,          XK_y,           selpaste,       {.i =  0} },
+	{ ControlMask,          XK_C,           clipcopy,       {.i =  0} },
+	{ ControlMask,          XK_V,           clippaste,      {.i =  0} },
+	{ ControlMask,          XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 };
